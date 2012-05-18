@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=320, user-scalable=no, initial-scale=1, maximum-scale=1">
+<script src="src/jquery-1.6.1.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Mi espacio</title>
+<script type="text/javascript">
+/*
+	if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+	} else {
+	window.alert("このWebページはスマートフォンからのみ閲覧が可能となっております。");
+	location.href = "http://www.google.co.jp/";
+	}
+*/
+</script>
+</head>
+<body>
+<div id="content">
+	<div id="header">
+	<img src="images/mi_espacio.png">
+	</div>
+	<br>
+
+	<div id="imagegallery">
+	</div>
+	<br>
+</div>
+<script type="text/javascript">
+var i;
+var j;
+$.ajax({
+    url: 'http://www.flickr.com/services/rest/?api_key=c3beec21a130d465f30d09e783e04e76&method=flickr.photos.search&user_id=68358112@N05&sort=date-taken-desc&extras=date_taken&per_page=5&format=json&jsoncallback=?',
+    type: 'GET',
+    dataType: 'jsonp',
+    error: function (){
+        alert('Error loading album');
+    },
+    success: function (json){
+     		for(i=0; i< json.photos.photo.length; i++){
+     		document.getElementById("imagegallery").innerHTML += '<div class=\"item\">'
++ '<span class=\"item-title\">' + json.photos.photo[i].title +'</span><br>'
++ '<img src="http://farm' + json.photos.photo[i].farm + '.static.flickr.com/' + json.photos.photo[i].server +'/' + json.photos.photo[i].id + '_' + json.photos.photo[i].secret +'.jpg\" style=\"width:200px;\"><br>'
++ '<span class=\"item-date\">' + json.photos.photo[i].datetaken +'</span>'
++ '</div>';
+			}
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, 
+fieldset, input, textarea, p, blockquote, th, td{
+    margin: 0; 
+    padding: 0;
+}
+html{
+    overflow-y: scroll;
+}
+h1, h2, h3, h4, h5, h6{
+    font-size: 100%; 
+    font-weight: normal;
+}
+ol, ul{
+    list-style:none;
+}
+fieldset, img{
+     border:0;
+}
+table{
+    border-collapse: collapse; 
+    border-spacing:0;
+}
+caption, th{
+    text-align: left;
+}
+address, caption, cite, code, dfn, em, strong, th, var{
+    font-style: normal; 
+    font-weight: normal;
+}
+/*共通項目*/
+body{
+background: url(../images/webtreats_wood-pattern3-1024_compressed.jpg);
+background-repeat: repeat;
+}
+
+#header{
+position:relative;
+width:210px;
+padding:10px 0px 10px;
+margin:auto;
+}
+
+#content{
+
+}
+
+/* cover */
+#cover-layout{
+margin:auto;
+text-align:center;
+color:white;
+font-weight:bold;
+}
+
+#helloworld{
+width:130px;
+height:130px;
+margin:auto;
+background: gray;
+background: url(../images/gold.jpg);
+background-size: contain;
+	border-radius: 30px;        /* CSS3草案 */  
+	-webkit-border-radius: 30px;    /* Safari,Google Chrome用 */  
+	-moz-border-radius: 30px;   /* Firefox用 */ 
+	-webkit-box-shadow: 5px 5px 10px #9f0;　/* Safari,Google Chrome用 */
+	-moz-box-shadow: 5px 5px 10px #9f0;　/* Firefox用 */
+
+}
+
+/* start-icon */
+#index-wrapper{
+height:500px;
+}
+
+img.icons{
+width:64px;
+height:64px;
+}
+
+a:link#miku{
+width:64px;
+height:64px;
+display:block;
+background: url(../images/HOT/64/miku.png);
+background-size: cover;
+border-radius: 15px;        /* CSS3草案 */  
+-webkit-border-radius: 15px;    /* Safari,Google Chrome用 */  
+-moz-border-radius: 5px;   /* Firefox用 */ 
+-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */
+}
+
+a:link#ikamusume{
+width:64px;
+height:64px;
+display:block;
+background: url(../images/HOT/64/ikamusume.gif);
+background-size: cover;
+border-radius: 15px;        /* CSS3草案 */  
+-webkit-border-radius: 15px;    /* Safari,Google Chrome用 */  
+-moz-border-radius: 5px;   /* Firefox用 */ 
+-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */
+}
+
+#about-me{
+	margin: 5px 12px 30px;
+	background: url(../images/tab_back_content.png);
+	text-align:center;
+	font-size:14px;
+	color:#ffffff;
+	border-radius: 5px;        /* CSS3草案 */  
+	-webkit-border-radius: 5px;    /* Safari,Google Chrome用 */  
+	-moz-border-radius: 5px;   /* Firefox用 */ 
+	-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+	-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */
+}
+
+table#table-01 {
+    margin:auto;
+}
+table#table-01 td {
+    padding: 5px;
+    border: 0px;
+    text-align: center;
+    color:#ffffff;
+}
+table#table-02 {
+    margin:auto;
+}
+table#table-02 td {
+    padding: 5px;
+    border: 0px;
+    text-align: center;
+    color:#ffffff;
+}
+table#table-03 {
+    margin:auto;
+}
+table#table-03 td {
+    padding: 5px;
+    border: 0px;
+    text-align: center;
+    color:#ffffff;
+}
+
+/*About*/
+#message-about{
+width:280px;
+text-align:left;
+padding:10px 12px 10px;
+margin:0px auto 20px;
+background: white;
+color:gray;
+border-radius: 10px;        /* CSS3草案 */  
+-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+-moz-border-radius: 10px;   /* Firefox用 */ 
+-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */  
+}
+
+/*Album*/
+.item{
+width:250px;
+text-align:center;
+padding:20px;
+margin:0px auto 20px;
+background: white;
+border-radius: 10px;        /* CSS3草案 */  
+-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+-moz-border-radius: 10px;   /* Firefox用 */ 
+-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */  
+}
+
+.item-title{
+font-size:12px;
+font-weight:bold;
+color:gray;
+}
+.item-date{
+font-size:12px;
+font-weight:bold;
+right:10px;
+color:gray;
+}
+
+/* Activity */
+.item-act{
+width:250px;
+padding-top:10px;
+margin:0px auto 20px;
+color:gray;
+background: white;
+border-radius: 10px;        /* CSS3草案 */  
+-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+-moz-border-radius: 10px;   /* Firefox用 */ 
+-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */  
+}
+
+.item-title-act{
+font-size:16px;
+font-weight:bold;
+text-align:center;
+color:gray;
+}
+
+.item-content-act{
+font-size:12px;
+font-weight:bold;
+text-align:left;
+color:gray;
+padding:5px;
+}
+
+.item-date-act{
+font-size:12px;
+font-weight:bold;
+right:10px;
+color:gray;
+}
+
+img.link-thumb{
+width:48px;
+height:48px;
+float:left;
+margin-left:5px;
+}
+
+a:link.item-link{
+color: #ff6600;
+position:relative;
+top:15px;
+margin-left:3px;
+}
+a:visited.item-link{
+color: #ff6600;
+}
+a:hover.item-link{
+color: #ff6600;
+}
+a:active.item-link{
+color: #ff6600;
+}
+
+/*FavoriteMap*/
+#favoritemap{
+color: white;
+}
+#explanation{
+color: white;
+font-size:14px;
+text-align:center;
+}
+
+#map_canvas_wrapper{
+width:260px; 
+margin:10px auto 10px;
+padding:10px;
+background: url(../images/webtreats_light_wood4_compressed.jpg);
+background-size: cover;
+border-radius: 10px;        /* CSS3草案 */  
+-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+-moz-border-radius: 10px;   /* Firefox用 */ 
+-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */
+}
+
+#map_canvas{
+width:250px; 
+height:200px;
+margin:auto;
+z-index:1;
+}
+
+#caption{
+width:270px;
+text-align:center;
+padding:10px;
+font-weight:bold;
+margin:0px auto 10px;
+background: url(../images/webtreats_blue-1_compressed.jpg);
+border-radius: 10px;        /* CSS3草案 */  
+-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+-moz-border-radius: 10px;   /* Firefox用 */ 
+-webkit-box-shadow: 1px 1px 3px #000;　/* Safari,Google Chrome用 */
+-moz-box-shadow: 5px 5px 7px #000;　/* Firefox用 */  
+}
+
+#selected_area{
+color: white;
+text-align:right;
+margin-right: 20px; 
+padding-top:10px;
+}
+a:link#regist{
+color: white;
+}
+a:visited#regist{
+color: white;
+}
+a:hover#regist{
+color: white;
+}
+a:active#regist{
+color: white;
+}
+
+/*Input.php*/
+.register{
+margin-bottom:10px;
+}

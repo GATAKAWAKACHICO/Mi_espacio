@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<script type="text/javascript">
+var xml;
+var originalURL="http://maps.google.com/maps/api/geocode/xml?address=" + encodeURIComponent("東京都港区芝公園４－２－８") + "&sensor=true";
+getXML("geocoding.php?url=" + escape(originalURL));
+function getXML(url){
+  xml = objXML();
+  xml.open('GET',url,true);
+  xml.onreadystatechange = function(){
+    if(xml.readyState == 4){
+      document.write(xml.responseText + '<br><br>');   // ここへレスポンス取得後の処理を記述
+      geocodingData = xml.responseXML;
+      geometry = geocodingData.getElementsByTagName("geometry");
+      lat = geometry[0].getElementsByTagName("location")[0].getElementsByTagName("lat")[0].textContent;
+      lng = geometry[0].getElementsByTagName("location")[0].getElementsByTagName("lng")[0].textContent;
+      document.write(lat + '<br>' + lng);
+    }
+  };
+  xml.send(null);
+}
+function objXML(){
+  try{
+    return new XMLHttpRequest();
+  }catch(e){
+    try{
+      return new ActiveXObject('Msxml2.XMLHTTP');
+    }catch(e){
+      try{
+        return new ActiveXObject('Microsoft.XMLHTTP');
+      }catch(e){
+        return null;
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

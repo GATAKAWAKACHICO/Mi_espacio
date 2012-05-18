@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=320, user-scalable=no, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="src/jquery-1.6.1.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Mi espacio</title>
+<script type="text/javascript">
+	if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+	} else {
+	window.alert("このWebページはスマートフォン向けのコンテンツとなっております。¥n予めご了承ください。");
+	}
+</script>
+</head>
+<body onload="initialize()">
+<div id="content">
+	<div id="header">
+	<img src="images/mi_espacio.png">
+	</div>
+	
+	<div id="favoritemap">
+		<div id="explanation">
+		<img src="images/my_favorite_places.png"><br>
+		</div>
+		
+		<div id="map_canvas_wrapper">
+			<div id="map_canvas">
+			</div>
+		</div>
+	
+		<div id="caption">
+		</div>
+	</div>
+		<div>
+			<img src="images/placepin.png" style="width:32px;"><a href="root/regist.php" id="regist"><img src="images/regist_place_from_here.png"></span>
+	</div>
+	<br>
+</div>
+	<script type="text/javascript">
+  function initialize() {
+    var shibuya = new google.maps.LatLng(35.658758, 139.703056);
+    var shinjuku = new google.maps.LatLng(35.690921, 139.700258);
+    var roppongi = new google.maps.LatLng(35.662836, 139.731443);
+    var hiyoshi = new google.maps.LatLng(35.553064, 139.646783);
+    var mito = new google.maps.LatLng(36.371091, 140.476207);
+    var mapOptions = {
+      zoom: 14,
+      center: shibuya,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    $.ajax({
+    		url: 'places/data.json',
+    		type: 'GET',
+    		dataType: 'json',
+    		error: function (){
+        	alert('Error loading location data.');
+    		},
+    		success: function (json){
+     				for(i=0; i< json.places.length; i++){
+     				/*
+     				document.getElementById("caption").innerHTML += json.places[i].name + 					'<br>' + json.places[i].date + '<br>' + json.places[i].latitude + '<br>' + 					json.places[i].longitude + '<br>' + json.places[i].comment + '<br>';
+     				*/
+     				setMarker(json.places[i].name, json.places[i].comment, json.places[i].latitude, json.places[i].longitude, json.places[i].date);
+				}
+    		}
+		});
+	function setMarker(name, comment, lat, lng, date){
+	marker = new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      map: map, 
+      title:"place"
+  });
+  	google.maps.event.addListener(marker, 'click', function() {
+    document.getElementById("caption").innerHTML = name + '<br>' + '<p style="text-align:left; font-size:10px;">' + comment + '</p>' + '<p style="text-align:right; font-size:12px;">' + date + '</p>';
+  });
+	}//end setMarker
+}
+</script>
+</body>
+</html>
